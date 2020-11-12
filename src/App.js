@@ -35,7 +35,7 @@ function App () {
 
   return (
     <AppWrapper>
-      <header className='App-header'>
+      <header data-testid='app-header'>
         welcome to..
       </header>
       <div>
