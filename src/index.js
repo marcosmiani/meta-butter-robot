@@ -1,11 +1,10 @@
+import 'antd/dist/antd.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,10 +29,8 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <React.StrictMode>
-      <GlobalStyle />
-      <App />
-    </React.StrictMode>
+    <GlobalStyle />
+    <App />
   </ApolloProvider>,
   document.getElementById('root')
 )

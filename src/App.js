@@ -1,9 +1,11 @@
-import { useQuery, gql } from '@apollo/client'
 import styled from 'styled-components'
+import CharacterList from './Character/List'
+import Filter from './Filter'
 
 const AppWrapper = styled.div`
   text-align: center;
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #FFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,36 +15,23 @@ const AppWrapper = styled.div`
   color: white;
 `
 
-const GET_CHARACTERS = gql`
-  query charactersSimple {
-    characters(page: 1) {
-      info {
-        count
-        pages
-        next
-        prev
-      }
-      results {
-        id
-        name
-      }
-    }
-  }
+const AppHeader = styled.header`
+  min-height: 100px;
+`
+
+const AppBody = styled.div`
+  margin: 16px;
 `
 
 function App () {
-  const { loading, error, data } = useQuery(GET_CHARACTERS)
-
   return (
     <AppWrapper>
-      <header data-testid='app-header'>
-        welcome to..
-      </header>
-      <div>
-        {!loading && !error && data.characters.results.map(character => (
-          <div key={character.id}>{character.name}</div>
-        ))}
-      </div>
+      <AppHeader data-testid='app-header'>
+        <Filter />
+      </AppHeader>
+      <AppBody>
+        <CharacterList />
+      </AppBody>
     </AppWrapper>
   )
 }
