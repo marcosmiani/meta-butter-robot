@@ -5,8 +5,7 @@ import Filter from './Filter'
 
 const AppWrapper = styled.div`
   text-align: center;
-  /* background-color: #282c34; */
-  background-color: #FFF;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,11 +16,15 @@ const AppWrapper = styled.div`
 `
 
 const AppHeader = styled.header`
-  min-height: 100px;
+  background-color: #FFF;
+  flex: 0 0 auto;
+  width: 100%;
 `
 
 const AppBody = styled.div`
-  margin: 16px;
+  margin: 0;
+  flex: 1 0 100%;
+  color: white;
 `
 
 function App () {

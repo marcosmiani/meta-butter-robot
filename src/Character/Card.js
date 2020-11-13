@@ -1,20 +1,28 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { List, Avatar } from 'antd'
+import { List, Card } from 'antd'
+
+const { Meta } = Card
 
 const Character = styled(List.Item)`
-  width: 350px;
+  min-width: 250px;
   margin: 16px;
 `
 
-const CharacterCard = ({ name, image, origin, location, species, status }) => {
+const CharacterCard = ({ id, name, image, origin, location, species, status, onSelect }) => {
   return (
     <Character>
-      <List.Item.Meta
-        avatar={<Avatar src={image} size='large' />}
-        title={name}
-        description={`${origin.dimension} ${location.dimension} ${species} ${status}`}
-      />
+      <Card
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt={name} src={image} />}
+        onClick={() => onSelect(id)}
+      >
+        <Meta
+          title={name}
+          description={`${location.dimension} ${species} ${status}`}
+        />
+      </Card>
     </Character>
   )
 }

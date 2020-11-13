@@ -71,7 +71,7 @@ const { Option } = Select
 
 const SearchInput = styled(Select)`
   width: 100%;
-  margin-top: 16px;
+  margin: 16px;
 `
 
 const byUnique = (acc, curr) => {
@@ -94,21 +94,16 @@ const DimentionPicker = ({ type, onSelect }) => {
     [SEARCH_TYPES.EPISODE]: useState('')
   }
 
-  const { refetch, loading, error, data } = useQuery(QUERY_MAP[type])
+  const query = useQuery(QUERY_MAP[type])
+  const { refetch, loading, error, data } = query
   const [value, setValue] = STATUS_MAP[type]
 
   useEffect(() => {
-    // Update the document title using the browser API
-    // setValue('')
-    refetch && refetch({ search: value })
+    query && query.refetch({ search: value })
   }, [type])
 
   const handleSearch = value => {
-    if (value) {
-      refetch({ search: value })
-    } else {
-      refetch()
-    }
+    refetch({ search: value || '' })
   }
 
   const handleChange = value => {
@@ -147,7 +142,9 @@ const DimentionPicker = ({ type, onSelect }) => {
       onSelect={handleSelect}
       onSearch={handleSearch}
       onChange={handleChange}
+      onClear={handleSearch}
       showSearch
+      loading={loading}
       placeholder='Search here'
       defaultActiveFirstOption={false}
       allowClear
