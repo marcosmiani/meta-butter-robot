@@ -47,7 +47,10 @@ const CharacterList = () => {
 
   const { loading, error, data } = useQuery(
     GET_CHARACTERS_BY_IDS,
-    { variables: { ids: characters.length ? characters : ['1', '2'] } }
+    {
+      variables: { ids: characters },
+      skip: !characters.length
+    }
   )
 
   return (

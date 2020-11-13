@@ -115,12 +115,12 @@ const DimentionPicker = ({ type, onSelect }) => {
     setValue(value)
   }
 
-  const handleSelect = (value, option) => {
-    const searchValue = RegExp(value, 'gi')
+  const handleSelect = (value) => {
     const selected = (data?.locations?.results || data?.episodes?.results || [])
       .reduce(
         (acc, curr) => {
-          if (searchValue.test(curr.name || curr.dimension)) {
+          const name = (curr.name || curr.dimension)
+          if (value === name) {
             const characters = (curr.characters || curr.residents)
             characters.forEach(character => character.id && acc.add(character.id))
           }
