@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/meta-butter-robot/static/js/main.ae76683f.chunk.js",
+    "main.js.map": "/meta-butter-robot/static/js/main.ae76683f.chunk.js.map",
+    "runtime-main.js": "/meta-butter-robot/static/js/runtime-main.e710c615.js",
+    "runtime-main.js.map": "/meta-butter-robot/static/js/runtime-main.e710c615.js.map",
+    "static/css/2.a10ec74d.chunk.css": "/meta-butter-robot/static/css/2.a10ec74d.chunk.css",
+    "static/js/2.68e56695.chunk.js": "/meta-butter-robot/static/js/2.68e56695.chunk.js",
+    "static/js/2.68e56695.chunk.js.map": "/meta-butter-robot/static/js/2.68e56695.chunk.js.map",
+    "static/js/3.f7f0c62b.chunk.js": "/meta-butter-robot/static/js/3.f7f0c62b.chunk.js",
+    "static/js/3.f7f0c62b.chunk.js.map": "/meta-butter-robot/static/js/3.f7f0c62b.chunk.js.map",
+    "index.html": "/meta-butter-robot/index.html",
+    "static/css/2.a10ec74d.chunk.css.map": "/meta-butter-robot/static/css/2.a10ec74d.chunk.css.map",
+    "static/js/2.68e56695.chunk.js.LICENSE.txt": "/meta-butter-robot/static/js/2.68e56695.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e710c615.js",
+    "static/css/2.a10ec74d.chunk.css",
+    "static/js/2.68e56695.chunk.js",
+    "static/js/main.ae76683f.chunk.js"
+  ]
+}
