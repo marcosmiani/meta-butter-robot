@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "Butter_Robot_64x64.png",
+      "src": "Butter_Robot_64.png",
       "sizes": "64x64",
       "type": "image/png"
     },

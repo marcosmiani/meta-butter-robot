@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import CharacterList from './Character/List'
 import Filter from './Filter'

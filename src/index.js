@@ -2,9 +2,10 @@ import 'antd/dist/antd.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import client from './client'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,11 +22,6 @@ const GlobalStyle = createGlobalStyle`
       monospace;
   }
 `
-
-const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql/',
-  cache: new InMemoryCache()
-})
 
 ReactDOM.render(
   <ApolloProvider client={client}>

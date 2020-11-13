@@ -1,52 +1,64 @@
 import * as React from 'react'
-import { List, Avatar } from 'antd'
+import { List } from 'antd'
 // import CharacterCard from './Card'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery, gql, useReactiveVar } from '@apollo/client'
+import { searchTypeVar, charactersVar } from '../client'
+import CharacterCard from './Card'
 
-const GET_CHARACTERS = gql`
-  query charactersSimple {
-    characters(page: 1) {
-      info {
-        count
-        pages
-        next
-        prev
-      }
-      results {
+export const GET_CHARACTERS_BY_IDS = gql`
+  query charactersByIds($ids: [ID!]!) {
+    charactersByIds(ids: $ids){
+      id
+      name
+      status
+      species
+      type
+      gender
+      origin{
         id
         name
-        image
-        species
-        status
-        origin {
-          dimension
-        }
-        location {
-          dimension
-        }
+        type
+        dimension
+        created
       }
+      location{
+        id
+        name
+        type
+        dimension
+        created
+      }
+      image
+      episode{
+        id
+        name
+        air_date
+        episode
+        created
+      }
+      created
     }
   }
 `
 
 const CharacterList = () => {
-  const { loading, error, data } = useQuery(GET_CHARACTERS)
+  const type = useReactiveVar(searchTypeVar)
+  const characters = useReactiveVar(charactersVar[type])
+
+  const { loading, error, data } = useQuery(
+    GET_CHARACTERS_BY_IDS,
+    { variables: { ids: characters.length ? characters : ['1', '2'] } }
+  )
 
   return (
     <List
       itemLayout='horizontal'
-      dataSource={!loading && !error ? (data?.characters?.results || []) : []}
+      dataSource={!loading && !error ? (data?.charactersByIds || []) : []}
       loading={loading}
       size={20}
       pagination='bottom'
-      renderItem={({ name, image, origin, location, species, status }) => (
-        <List.Item>
-          <List.Item.Meta
-            avatar={<Avatar src={image} size='large' />}
-            title={name}
-            description={`${origin.dimension} ${location.dimension} ${species} ${status}`}
-          />
-        </List.Item>
+      renderItem={(character) => (
+        <CharacterCard {...character} />
       )}
     />
   )
