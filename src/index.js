@@ -2,10 +2,9 @@ import 'antd/dist/antd.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
-import { ApolloProvider } from '@apollo/client'
+
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import client from './client'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -24,10 +23,10 @@ const GlobalStyle = createGlobalStyle`
 `
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
+  <>
     <GlobalStyle />
     <App />
-  </ApolloProvider>,
+  </>,
   document.getElementById('root')
 )
 

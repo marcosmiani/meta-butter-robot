@@ -138,6 +138,7 @@ const DimentionPicker = ({ type, onSelect }) => {
 
   return (
     <SearchInput
+      data-testid='search-input'
       value={value}
       onSelect={handleSelect}
       onSearch={handleSearch}

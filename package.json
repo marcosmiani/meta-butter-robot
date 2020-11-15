@@ -19,12 +19,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:docker": "docker run --rm -p 8080:80 mmiani/meta-butter-robot:latest",
     "build": "react-scripts build",
+    "build:docker": "docker build . -t mmiani/meta-butter-robot",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "lint": "standard src/*.js",
-    "eject": "react-scripts eject"
+    "lint": "standard src/*.js"
   },
   "eslintConfig": {
     "extends": [

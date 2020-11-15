@@ -25,10 +25,12 @@ const Filter = () => {
   return (
     <FilterRow justify='center' align='center'>
       <FilterColumn xs={{ span: 24 }} sm={{ span: 10 }} md={{ span: 8, offset: 2 }}>
-        <Radio.Group onChange={e => searchTypeVar(e.target.value)} defaultValue={type}>
-          <Radio.Button value={SEARCH_TYPES.DIMENSION}>Dimension</Radio.Button>
-          <Radio.Button value={SEARCH_TYPES.LOCATION}>Location</Radio.Button>
-          <Radio.Button value={SEARCH_TYPES.EPISODE}>Episode</Radio.Button>
+        <Radio.Group
+          onChange={e => searchTypeVar(e.target.value)} defaultValue={type}
+        >
+          <Radio.Button data-testid='search-dimension-option' value={SEARCH_TYPES.DIMENSION}>Dimension</Radio.Button>
+          <Radio.Button data-testid='search-location-option' value={SEARCH_TYPES.LOCATION}>Location</Radio.Button>
+          <Radio.Button data-testid='search-episode-option' value={SEARCH_TYPES.EPISODE}>Episode</Radio.Button>
         </Radio.Group>
       </FilterColumn>
       <FilterColumn xs={{ span: 24 }} sm={{ span: 14 }} md={{ span: 8, offset: 0 }}>

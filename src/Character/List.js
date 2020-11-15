@@ -102,11 +102,11 @@ const CharacterList = () => {
         </FilterColumn>
       ))}
       {skip && (
-        <EmptyMessage>
+        <EmptyMessage data-testid='butter-robot-message'>
           <img
             width={200}
             alt='ButterRobot'
-            src='/Butter_Robot.png'
+            src={`${process.env.PUBLIC_URL}/Butter_Robot.png`}
           />
           <Chat>
             <Message code>What is my purpose?</Message>
@@ -134,11 +134,7 @@ const CharacterList = () => {
       <Detail
         id={characterDetailId}
         onClose={() => setCharacterDetail(false)}
-      >
-        <p>some contents...</p>
-        <p>some contents...</p>
-        <p>some contents...</p>
-      </Detail>
+      />
     </CharactersRow>
   )
 }

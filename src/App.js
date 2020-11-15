@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ApolloProvider } from '@apollo/client'
+
+import client from './client'
 import CharacterList from './Character/List'
 import Filter from './Filter'
 
@@ -29,14 +32,16 @@ const AppBody = styled.div`
 
 function App () {
   return (
-    <AppWrapper>
-      <AppHeader data-testid='app-header'>
-        <Filter />
-      </AppHeader>
-      <AppBody>
-        <CharacterList />
-      </AppBody>
-    </AppWrapper>
+    <ApolloProvider client={client}>
+      <AppWrapper>
+        <AppHeader data-testid='app-header'>
+          <Filter />
+        </AppHeader>
+        <AppBody>
+          <CharacterList />
+        </AppBody>
+      </AppWrapper>
+    </ApolloProvider>
   )
 }
 
