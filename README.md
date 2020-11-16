@@ -9,9 +9,27 @@ Go to [Meta-butter robot](http://marcosmiani.github.io/meta-butter-robot).
  - Link everything together, maps to different details (what other characters this episode, dimention, location has?)
  - MORE fun references to episodes and jokes
 
+## How a plumbus is made:
+
+Everyone has a plumbus in their home. First they take the dingle bop and they smooth it out with a bunch of schleem. The schleem is then...repurposed for later batches.
+
+They take the dingle bop and they push it through the grumbo, where the fleeb is rubbed against it. It's important that the fleeb is rubbed, becasue the fleeb has all the fleeb juice.
+
+Then, a schlami shows up, and he rubs it...and spits on it.
+
+They cut the fleeb. There's several hizzards in the way.
+
+The blamfs rub against the chumbles, and the...plubis, and grumbo are shaved away.
+
+That leaves you with...a regular old plumbus.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn build:docker` && `yarn start:docker`
+
+Builds the app docker image and run the built image respectively
 
 ### `yarn start`
 
@@ -35,7 +53,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn build:docker` && `yarn start:docker`
-
-Builds the app docker image and run the built image respectively
